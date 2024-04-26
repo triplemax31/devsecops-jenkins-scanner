@@ -60,7 +60,7 @@ pipeline {
         string(name: 'WEBGOAT_PROJECTNAME', defaultValue: 'BuildImage74257FD8-yKBKluOSHzE7', description: 'CodeBuild project name')
         string(name: 'JOERN_PROJECTNAME', defaultValue: 'JoernScan2FFB8D2D-SZEOm7uCQ6A7', description: 'CodeBuild project name')
         string(name: 'ARTIFACT_S3', defaultValue: 'codebuildstack-jenkinsbuildartifactsf33606a2-wucq9i602aau', description: 'CodeBuild artifact bucket')
-        choice(name: 'AWS_REGION', choices: ['ap-southeast-1'], description: 'AWS region')
+        choice(name: 'AWS_REGION', choices: ['us-west-2'], description: 'AWS region')
     }
     environment {
         BRANCH_NAME = sh(script: "echo ${env.GIT_BRANCH} | awk -F'/' '{print \$NF}'", returnStdout: true).trim()
